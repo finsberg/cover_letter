@@ -47,7 +47,7 @@
                 {#9}
                 \vspace{6pt}\\
                 #1\\
-                #2, #3 #4\\
+                #2 #3, #4\\
                 Phone: #5\\
                 Email: \href{mailto:#6}{#6}
                 }
@@ -56,13 +56,13 @@
     }
 
 $if(draft)$
-\usepackage{draftwatermark}
-\SetWatermarkLightness{1.0}
+\usepackage[nostamp]{draftwatermark}
+\SetWatermarkLightness{0.9}
 $endif$
 
 \begin{document}
 
-\header{$head.address$}{$head.city$}{$head.country$}{$head.zip$}{$head.phone$}{$head.email$}{$sig.name$}{$head.dept$}{$head.affiliation$}
+\header{$head.address$}{$head.zip$}{$head.city$}{$head.country$}{$head.phone$}{$head.email$}{$sig.name$}{$head.dept$}{$head.affiliation$}
 
 
 \vspace{0.5in}
@@ -89,9 +89,6 @@ $if(sig.include)$
     \\
     $sig.name$\\
     $sig.post$
-    $if(sig.secondpost)$
-        \\
-    $endif$
     \end{minipage}
 $endif$
 
